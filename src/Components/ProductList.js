@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import ProductComponent from './ProductComponent'
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
-import { setProducts } from '../Redux/Actions/productActions'
+import {setProducts}  from '../Redux/Actions/productActions'
 
 
 const ProductList = () => {
