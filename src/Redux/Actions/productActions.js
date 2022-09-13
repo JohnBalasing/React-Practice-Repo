@@ -17,6 +17,5 @@ export const setSelectedProducts = (product) => {
 export const removeSelectedProducts = () => {
     return{
         type: ActionTypes.REMOVE_SELECTED_PRODUCT,
-        payload: {},
     }
 }

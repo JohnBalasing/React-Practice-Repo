@@ -7,20 +7,24 @@ const ProductComponent = () => {
     const products = useSelector((state) => state.allProducts.products)
     const renderedList = products.map((product) =>{
         const {id, title, image, price, category} = product;
+        return(   
         <Container key={id}>
+            <Link to={`/product/${id}`} style={{ textDecoration: 'none', color: "inherit" }}>
             <div className='product'>
-                <img src='image' alt={title}>{image}</img>
-                <h1>{id}</h1>
-                <h2>{title}</h2>
+                <img src={image} alt={title}/>
+                <h1>${price}</h1>
                 <h2>{category}</h2>
+                <p>{title}</p>
             </div>
-        </Container>
+            </Link>
+        </Container>)
     })
+    console.log("renderedList",renderedList)
 
     return (
-    <>
+    <ProductContent>
     {renderedList}
-    </>
+    </ProductContent>
     )
  };
 
@@ -46,4 +50,10 @@ img{
     width: 100px;
     height: 100px;
 }
+`;
+
+const ProductContent = styled.div`
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
 `;
