@@ -19,3 +19,17 @@ export const removeSelectedProducts = () => {
         type: ActionTypes.REMOVE_SELECTED_PRODUCT,
     }
 }
+
+export const addSelectedItems = (itemSelected) => {
+    return{
+        type: ActionTypes.ADD_ITEM,
+        payload: itemSelected
+    }
+}
+
+export const removeSelectedItems = (itemSelected) => {
+    return{
+        type: ActionTypes.REMOVE_ITEM,
+        payload: itemSelected
+    }
+}

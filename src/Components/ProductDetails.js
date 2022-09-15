@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import { setSelectedProducts, removeSelectedProducts } from '../Redux/Actions/productActions'
 import axios from 'axios'
 import styled from 'styled-components'
+import { addSelectedItems, removeSelectedItems } from '../Redux/Actions/productActions';
 
 const ProductDetails = () => {
     const product = useSelector((state) => state.product)
@@ -37,10 +38,13 @@ const ProductDetails = () => {
       <img src={image} />
       <div className='description'>
         <h1>{title}</h1>
-        <h2>{category}</h2>
-        <p>{description}</p>
-        <h1>${price}</h1>
-        <button>Add to Cart</button>
+          <h2>{category}</h2>
+            <p>{description}</p>
+              <h1>${price}</h1>
+      <div className='buttons'>
+        <button onClick={() => dispatch(addSelectedItems())}>Add to Cart</button>
+        <button onClick={() => dispatch(removeSelectedItems())}>Remove Item</button>
+      </div>
       </div>
     </ProductDetailDiv>
   )
@@ -74,6 +78,12 @@ img{
     font-size: 20px;
     text-align: left;
   }
+.buttons{
+ 
+
+}
+
+
 
   button{
     width: 200px;

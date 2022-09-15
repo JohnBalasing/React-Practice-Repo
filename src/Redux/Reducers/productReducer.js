@@ -26,3 +26,15 @@ export const selectedProductReducer = (state = {}, {type, payload} ) => {
             return state;
     }
 }
+
+export const selectedItemReducer = (state = 0 , action) => {
+
+    switch (action.type) {
+        case ActionTypes.ADD_ITEM:
+            return state + 1;
+        case ActionTypes.REMOVE_ITEM:
+            return state - 1;
+        default:
+            return state;
+    }
+}
